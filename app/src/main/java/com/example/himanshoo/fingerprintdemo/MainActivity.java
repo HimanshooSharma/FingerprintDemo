@@ -27,9 +27,14 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
+/*
+@author
+ himanshoo
+ */
+
 public class MainActivity extends AppCompatActivity {
 
-    private static final String KEY_NAME = "example_key"; //Used to generate key
+    private static final String KEY_NAME = "example_key";   // Used to generate key
     private FingerprintManager fingerprintManager;
     private KeyguardManager keyguardManager;
     private KeyStore keyStore;
@@ -42,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        getSupportActionBar().hide();
+        getSupportActionBar().hide();    //Hide Action Bar
 
         keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
         fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);

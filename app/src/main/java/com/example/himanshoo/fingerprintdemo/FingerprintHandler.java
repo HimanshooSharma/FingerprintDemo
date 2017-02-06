@@ -1,6 +1,7 @@
 package com.example.himanshoo.fingerprintdemo;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -36,23 +37,23 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
     public void onAuthenticationError(int errMsgId,
                                       CharSequence errString) {
         Toast.makeText(appContext,
-                "Authentication error\n" + errString,
-                Toast.LENGTH_LONG).show();
+                errString,
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onAuthenticationHelp(int helpMsgId,
                                      CharSequence helpString) {
         Toast.makeText(appContext,
-                "Authentication help\n" + helpString,
-                Toast.LENGTH_LONG).show();
+                helpString,
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onAuthenticationFailed() {
         Toast.makeText(appContext,
                 "Authentication failed.",
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -61,8 +62,9 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
 
         Toast.makeText(appContext,
                 "Authentication succeeded.",
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
         Intent i = new Intent(appContext,SucceedActivity.class);
         appContext.startActivity(i);
+        ((Activity)appContext).finish();
     }
 }
