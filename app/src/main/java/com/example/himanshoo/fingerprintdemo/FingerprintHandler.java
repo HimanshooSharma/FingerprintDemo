@@ -65,6 +65,6 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
                 Toast.LENGTH_SHORT).show();
         Intent i = new Intent(appContext,SucceedActivity.class);
         appContext.startActivity(i);
-        ((Activity)appContext).finish();
+        ((Activity)appContext).finish();       //Finish MainActivity
     }
 }

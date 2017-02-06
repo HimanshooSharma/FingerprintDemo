@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
 
         if(!keyguardManager.isKeyguardSecure())
-            Toast.makeText(this,"Lock Screen not set",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Lock Screen not set",Toast.LENGTH_SHORT).show();
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT)!= PackageManager.PERMISSION_GRANTED)
             Toast.makeText(this,"Improper Permissions",Toast.LENGTH_SHORT).show();
         if(!fingerprintManager.hasEnrolledFingerprints())
