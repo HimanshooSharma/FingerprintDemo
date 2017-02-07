@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_succeed"
     android:layout_width="match_parent"
@@ -9,41 +10,39 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.himanshoo.fingerprintdemo.SucceedActivity"
-    android:background="@android:color/darker_gray">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/avatar"
-        android:id="@+id/imageView2"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recognition Successfull !"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:text="Recognition Successful !"
         android:id="@+id/textView2"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:layout_marginTop="46sp"
+        android:layout_gravity="center"
+         />
 
-    <TextView
-        android:text="About the developer"
+
+
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="19dp"
-        android:id="@+id/textView4" />
+        app:srcCompat="@drawable/git"
+        android:id="@+id/git_button"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"/>
 
-    <TextView
-        android:text="Himanshoo"
+
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:id="@+id/textView5" />
+        app:srcCompat="@drawable/about"
+        android:id="@+id/about_button"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="center"
+        android:layout_marginTop="50sp"/>
 
-</RelativeLayout>
+
+</LinearLayout>
