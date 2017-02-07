@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private KeyGenerator keyGenerator;
     private Cipher cipher;
     private FingerprintManager.CryptoObject cryptoObject;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,13 +53,18 @@ public class MainActivity extends AppCompatActivity {
         keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
         fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
 
-        if(!keyguardManager.isKeyguardSecure())
+        if(!keyguardManager.isKeyguardSecure())                                             //Check whether fingerprint is enabled in lock screen
             Toast.makeText(this,"Lock Screen not set",Toast.LENGTH_SHORT).show();
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT)!= PackageManager.PERMISSION_GRANTED)
+
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT)!= PackageManager.PERMISSION_GRANTED) //Check Permission
             Toast.makeText(this,"Improper Permissions",Toast.LENGTH_SHORT).show();
-        if(!fingerprintManager.hasEnrolledFingerprints())
+
+        if(!fingerprintManager.hasEnrolledFingerprints())                   //Check if any fingerprint is enrolled
             Toast.makeText(this,"No fingerprints enrolled",Toast.LENGTH_SHORT).show();
+
         generateKey();
+
+
         if(cipherInit()) {
             cryptoObject = new FingerprintManager.CryptoObject(cipher);
             FingerprintHandler helper = new FingerprintHandler(this);
