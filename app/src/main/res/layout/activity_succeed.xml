@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/Avatar"
+        android:src="@drawable/avatar"
         android:id="@+id/imageView2"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recognition Successfull!!!"
+        android:text="Recognition Successfull !"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView2"
@@ -38,7 +38,7 @@
         android:id="@+id/textView4" />
 
     <TextView
-        android:text="<Himanshoo/>"
+        android:text="Himanshoo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView2"
